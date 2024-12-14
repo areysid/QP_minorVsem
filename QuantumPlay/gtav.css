@@ -1,0 +1,348 @@
+/* styles.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0f061b; /* Dark purple background */
+  color: #ffffff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #0f061b;
+}
+
+.header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.header .nav-links a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.warning-bar {
+  padding: 0.5rem;
+  text-align: center;
+  background-color: #ff0080;
+  color: #ffffff;
+}
+
+.game-header {
+  position: relative;
+  height: 600px;
+}
+
+.game-cover {
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 1rem;
+  overflow: hidden; /* To ensure blur effect is contained */
+}
+
+.game-cover img {
+  width: 100%; /* Ensure image takes full width */
+  height: 100%; /* Ensure image takes full height */
+  object-fit: cover;
+  filter: blur(3px); /* Apply the blur effect only to the image */
+  position: absolute; /* Position the image behind the content */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensure it stays behind the content */
+}
+
+.game-logo {
+  position: absolute;
+  top: 20%; /* Position the logo at the center */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%; /* Adjust the logo size */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 2; /* Ensure the logo is above the text */
+}
+
+.game-info {
+  background: transparent;
+  display: grid;
+  padding: 2rem;
+  border-radius: 2px;
+  height: 250px;
+  position: relative; /* Ensure the content stays above the blurred image */
+}
+
+.game-info h1 {
+  margin: 0;
+  font-size: 4rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #000000; /* Adds a black border around the text */
+}
+
+.tags span {
+  background-color: #5c007a;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-right: 1rem;
+}
+
+.availability-btn {
+  background-color: #6a1b9a;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* New section for screenshots */
+.game-screenshots {
+  padding: 2rem;
+  background-color: #29004a; /* Dark background for the section */
+}
+
+.screenshot-container {
+  display: flex;
+  justify-content: space-between; /* Distribute images evenly */
+  flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+  gap: 1rem; /* Space between images */
+}
+
+.screenshot {
+  width: 18%; /* Adjust the width to fit the images */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add shadow for better visuals */
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; /* Smooth transition */
+  object-fit: cover; /* Ensure the image fits inside the container */
+}
+/* Zoom effect on hover */
+.screenshot:hover {
+  transform: scale(1.15); /* Zoom in effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhance shadow on hover */
+}
+
+.game-details {
+  display: flex;
+  padding: 2rem;
+}
+
+.description {
+  flex: 2;
+  margin-right: 2rem;
+  padding: 1.5rem; /* Add padding for better spacing */
+  background-color: #1a1a1a; /* Optional: Background to match the details box */
+  border-radius: 10px; /* Rounded corners for a polished look */
+  color: #f5f5f5; /* Clean, soft white color for text */
+  font-family: 'Roboto', sans-serif; /* Professional and readable font */
+  line-height: 1.8; /* Increase line height for readability */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  word-wrap: break-word; /* Ensure text wraps properly */
+}
+
+.description h2 {
+  font-size: 2rem; /* Slightly larger font for the heading */
+  font-weight: bold; /* Emphasize the title */
+  margin-bottom: 1rem; /* Space between the heading and the paragraph */
+  color: #ffffff; /* Keep the heading text white */
+  border-bottom: 2px solid #444; /* Optional: Divider line below heading */
+  padding-bottom: 0.5rem; /* Padding below the heading */
+}
+
+.description p {
+  font-size: 1rem; /* Regular size for paragraph text */
+  font-weight: 400; /* Normal font weight */
+  margin: 0; /* Remove default paragraph margin */
+  color: #dcdcdc; /* Slightly lighter white for the paragraph text */
+}
+
+/* .meta-info {
+  flex: 1;
+}
+
+.meta-card {
+  background: #29004a;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+} */
+
+/* Add black background and padding to the entire details box */
+.details-box {
+  background-color: #1a1a1a; /* Blackish background color */
+  padding: 2rem; /* Add padding around the content */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  height: auto; /* Allow height to adjust dynamically */
+  width: 600px; /* Reduced width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  color: #fff; /* Ensure text is white for readability */
+  overflow: hidden; /* Prevent any overflow issues */
+}
+
+/* Header with the game logo and title */
+.details-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem; /* Space below the header */
+}
+
+.game-logo {
+  width: 70px; /* Increased logo width */
+  height: 70px; /* Increased logo height */
+  margin-right: 1rem;
+}
+
+.details-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  word-wrap: break-word; /* Ensures long text wraps properly */
+}
+
+/* Add styling for the company logo container */
+.company-logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem; /* Space between the logo and the details */
+}
+
+.company-logo {
+  width: 250px; /* Larger logo size */
+  height: 100px;
+  object-fit: contain; /* Ensures the logo maintains its aspect ratio */
+}
+
+/* Styling for the individual detail items */
+.details-content {
+  border-top: 1px solid #444; /* Thin grey line for subtle separation */
+  padding-top: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #444; /* Thin grey line between items */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+.detail-title {
+  font-weight: bold;
+  color: #f0f0f0; /* Slightly off-white for a softer look */
+  font-size: 1rem;
+  flex-basis: 45%; /* Ensure title takes up a consistent width */
+}
+
+.detail-text {
+  color: #b0b0b0; /* Light gray color for the text */
+  font-weight: normal;
+  font-size: 1rem;
+  flex-basis: 50%; /* Ensure text fits beside the title */
+  word-wrap: break-word; /* Wrap long text */
+}
+
+/* responsive design for smaller screens */
+@media (max-width: 768px) {
+  .details-box {
+    width: 90%; /* Adjust box width to fit smaller screens */
+    padding: 1.5rem;
+  }
+
+  .detail-title,
+  .detail-text {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
+
+  .company-logo {
+    width: 80px; /* Slightly smaller logo for small screens */
+    height: 80px;
+  }
+}
+
+/* General Styles  FOOOOOOTERRRRRRRRR*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; /* Ensure the page takes the full height of the viewport */
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Flex layout to structure content and footer */
+  margin: 0;
+}
+
+/* Main Content */
+.content {
+  flex: 1; /* Allows the content to take up remaining space and push the footer down */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text */
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li a {
+  text-decoration: none;
+  color: #fff; /* White links */
+  font-size: 0.9rem;
+}
+
+.footer-links li a:hover {
+  color: #00bcd4; /* Light blue hover effect */
+}
+
+.learn-more {
+  text-align: center; /* Centers the content within the div */
+  margin-top: 20px; /* Adds space above the button */
+}
+
+.learn-more button {
+  background-color: #007BFF; /* Blue background */
+  color: white; /* White text */
+  font-size: 16px; /* Text size */
+  padding: 10px 20px; /* Padding around the text */
+  border: none; /* Removes the border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.learn-more button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+

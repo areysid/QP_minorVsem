@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Aggregator</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Quantum Play</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="main.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="gamepage.html"><i class="fas fa-gamepad"></i> Games</a></li>
+        <li><a href="aboutus.html"><i class="fa-solid fa-user"></i> About Us</a></li>
+        <!-- <li><a href="#search"><i class="fas fa-search"></i> Search</a></li> -->
+      </ul>
+    </nav>
+    <button class="sign-in-btn" onclick="window.location.href='login.html'">Sign In</button>
+
+    <div class="profile-menu">
+      <a href="#"><i class="fas fa-user profile-icon"></i></a>
+      <!-- <ul class="profile-dropdown">
+        <li><a href="#profile" class="profile-link">Profile</a></li>
+        <li><a href="login.html" class="login-link">Login</a></li>
+      </ul> -->
+    </div>
+  </header>
+
+  <!-- New Container Below Navbar -->
+  <section class="content-container">
+    <div class="game-carousel">
+      <div class="game-info">
+        <img id="game-logo" alt="Game Logo" style="max-width: 200px; height: auto;" />
+        <p id="game-description"></p>
+        <!-- See More Button -->
+        <div class="buttons-container">
+          <button id="mute-btn" class="mute-btn">Unmute</button>
+          <a href="game-page.html">
+            <button class="see-more-btn">See More</button>
+          </a>
+        </div>
+      </div>
+      <div class="game-info">
+        <h2 id="game-title">Game Title</h2>
+      </div>
+      <div class="game-video">
+        <video id="game-video" muted autoplay loop></video>
+      </div>
+    </div>
+    <!-- Dots Indicator -->
+    <div class="dots-container">
+      <span class="dot" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+      <span class="dot" data-index="3"></span>
+      <span class="dot" data-index="4"></span>
+    </div>
+  </section>
+
+  <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+  <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+
+
+
+  <!-- Genre Section -->
+  <section class="genre-section">
+    <h2 class="genre-title">Game Genres</h2>
+    <div class="genre-wrapper">
+      <button class="scroll-btn left-btn">‹</button>
+      <div class="genre-scroll">
+        <!-- Genre Cards -->
+        <div class="genre-card">
+          <img src="game category/Action.png" alt="Action Genre">
+          <p>Action</p>
+        </div>
+        <div class="genre-card">
+          <img src="game category/Adventure.png" alt="Adventure Genre">
+          <p>Adventure</p>
+        </div>
+        <div class="genre-card">
+          <img src="game category/Racing.png" alt="Racing Genre">
+          <p>Racing</p>
+        </div>
+        <div class="genre-card">
+          <img src="game category/Simulation.png" alt="Simulation Genre">
+          <p>Simulation</p>
+        </div>
+        <div class="genre-card">
+          <img src="game category/Fighting.png" alt="Fighting">
+          <p>Fighting</p>
+        </div>
+        <div class="genre-card">
+          <img src="game category/Sports.png" alt="Sports">
+          <p>Sports</p>
+        </div>
+        <div class="genre-card">
+          <img src="game category/Arcade.png" alt="Arcade">
+          <p>Arcade</p>
+        </div>
+        <div class="genre-card">
+          <img src="game category/horror.png" alt="Shooter Genre">
+          <p>Shooter</p>
+        </div>
+      </div>
+      <button class="scroll-btn right-btn">›</button>
+    </div>
+  </section>
+
+  <!-- Game Gallery -->
+  <section class="games-gallery" id="games">
+    <h2>Popular Games</h2>
+    <div class="game-cards">
+      <div class="game-card">
+        <img src="popular game/minecraft.webp" alt="Game 1">
+        <p>Game Title 1</p>
+        <div class="hover-overlay">
+          <video src="popular game/minecraft.mp4" muted></video>
+          <a href="minecraft.html" class="check-more-btn">Check More</a>
+        </div>
+      </div>
+      <div class="game-card">
+          <img src="popular game/apex.jpg" alt="Game 2">
+          <p>Game Title 2</p>
+          <div class="hover-overlay">
+              <video src="popular game/Apex Legends Season 2 – Battle Charge Launch Trailer.mp4" muted></video>
+              <a href="apexlegends.html" class="check-more-btn">Check More</a>
+          </div>
+      </div>
+      <div class="game-card">
+          <img src="popular game/cod.webp" alt="Game 3">
+          <p>Game Title 3</p>
+          <div class="hover-overlay">
+              <video src="popular game/cod.mp4" muted></video>
+              <a href="warzone.html" class="check-more-btn">Check More</a>
+          </div>
+      </div>
+      <div class="game-card">
+          <img src="popular game/f1.webp" alt="Game 4">
+          <p>Game Title 4</p>
+          <div class="hover-overlay">
+              <video src="popular game/videoplayback.mp4" muted></video>
+              <a href="f124.html" class="check-more-btn">Check More</a>
+          </div>
+      </div>
+      <!-- <div class="game-card">
+        <img src="trailer/forzabg.jpeg" alt="Game 2">
+        <p>Game Title 2</p>
+        <div class="hover-overlay">
+          <video src="trailer/forza.mp4" muted></video>
+          <a href="forza.html" class="check-more-btn">Check More</a>
+        </div>
+      </div>
+      <div class="game-card">
+        <img src="trailer/gotbg.jpg.webp" alt="Game 3">
+        <p>Game Title 3</p>
+        <div class="hover-overlay">
+          <video src="trailer/got.mp4" muted></video>
+          <a href="got.html" class="check-more-btn">Check More</a>
+        </div>
+      </div>
+      <div class="game-card">
+        <img src="trailer/rdrbg.jpg" alt="Game 4">
+        <p>Game Title 4</p>
+        <div class="hover-overlay">
+          <video src="trailer/rdr2.mp4" muted></video>
+          <a href="rdr2.html" class="check-more-btn">Check More</a>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <script src="main.js" defer></script>
+</body>
+
+</html>

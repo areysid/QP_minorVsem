@@ -1,0 +1,489 @@
+/* Basic Reset */
+html, body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100%; /* Ensure full height */
+    background-color: #0f061b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 18px 20px;
+    background-color: #2a0058; /* Soft purple color */
+    position: relative; /* Allows for better positioning */
+    z-index: 1000; /* Keeps the navbar above other elements */
+}
+
+/* Logo and navigation links */
+.logo {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+.nav-links li {
+    margin-right: 15px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 4px;
+    position: relative;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    padding: 6px 10px;
+}
+
+/* Active page highlighter */
+.nav-links .active {
+    border-bottom: 2px solid white;
+}
+
+/* Sign In Button */
+.sign-in-btn {
+    margin-left: auto;
+    padding: 6px 50px;
+    font-size: 16px;
+    background-color: #9147fe; /* Darker purple */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-right: 15px;
+}
+
+.sign-in-btn:hover {
+    background-color: #3a2d5c;
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* User Profile */
+.profile-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; /* Dropdown appears below the profile icon */
+    left: 0;
+    background-color: #333;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.profile-menu:hover .profile-dropdown {
+    display: block;
+}
+
+.profile-icon {
+    color: #fff;
+    font-size: 18px;
+}
+.prev-btn, .next-btn {
+    position: absolute; /* Position the buttons absolutely */
+    top: 25%; /* Center them vertically */
+    background: none; /* Remove any background */
+    border: none; /* Remove borders */
+    color: white; /* Arrow color */
+    font-size: 35px; /* Adjust font size */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    z-index: 10; /* Ensure buttons are above other elements */
+}
+
+.prev-btn {
+    left: 0px; /* Position to the left of the container */
+}
+
+.next-btn {
+    right: 0px; /* Position to the right of the container */
+}
+
+/* Add hover effects */
+.prev-btn:hover, .next-btn:hover {
+    color: #3a2d5c; /* Change color on hover */
+}
+
+/* Content Container */
+.content-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: #000000; /* Fallback color */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: add a shadow effect */
+    }
+    
+
+.game-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: auto;
+    padding-left: 100px;
+    background-size: cover; /* Ensure the background covers the entire container */
+    background-position: center; /* Center the background image */
+}
+
+.game-info {
+    width: 55%;
+    z-index: 1;
+}
+
+#game-title {
+    font-size: 24px;
+    color: #333;
+}
+
+#game-description {
+    font-size: 16px;
+    color: #ddd; /* Changed to a lighter gray for better readability */
+    padding-left: 5px;
+}
+
+.game-video {
+    width: 100%;
+    max-width: 100%;
+}
+
+.game-video video {
+    width: 100%;
+    z-index: 0;
+    position: relative;
+    border-radius: 100px;
+}
+
+.game-video:hover video {
+    filter: brightness(1);
+}
+
+@media (min-width: 768px) {
+    .game-video {
+        max-height: 600px; /* Set a maximum height for larger screens */
+    }
+}
+
+.buttons-container {
+    display: flex;
+    width: 20%; /* Make the container span the full width of the parent */
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 10px; /* Ensure it's positioned at the bottom of the video */
+}
+
+.mute-btn, .see-more-btn {
+    background-color: rgba(75, 59, 122, 0.7); /* Semi-transparent button */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1; /* Ensure buttons are above the video */
+    transition: background-color 0.3s;
+}
+
+.mute-btn:hover, .see-more-btn:hover {
+    background-color: rgba(58, 45, 92, 0.9); /* Darker color on hover */
+}
+
+
+/* Hide default video controls */
+video::-webkit-media-controls {
+    display: none !important; /* For WebKit-based browsers */
+}
+
+video::-moz-media-controls {
+    display: none !important; /* For Firefox */
+}
+
+/* Dot container to tell which page you are on in showcasing */
+.dots-container {
+    text-align: center;
+    margin-top: 10px; /* Space between carousel and dots */
+}
+
+.dot {
+    height: 10px; /* Height of the dot */
+    width: 10px; /* Width of the dot */
+    margin: 0 5px; /* Space between dots */
+    background-color: #bbb; /* Default dot color */
+    border-radius: 50%; /* Round shape */
+    display: inline-block; /* Inline block to sit next to each other */
+    cursor: pointer; /* Pointer on hover */
+}
+
+/* Active dot color */
+.dot.active {
+    background-color: #4b3b7a; /* Active dot color */
+}
+
+.content-container h2 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.content-container p {
+    font-size: 16px;
+    color: #ddd;
+}
+
+
+/* Genre Section */
+
+.genre-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+   
+    background-color: #0f061b;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: add a shadow effect */
+}
+
+.genre-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+/* Wrapper to position buttons outside */
+.genre-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.genre-scroll {
+    display: flex;
+    gap: 15px;
+    padding: 10px 0;
+    overflow: hidden;
+    width: 95%; /* Adjust width to make room for scroll buttons outside */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.genre-scroll::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, Edge */
+}
+
+.genre-card {
+    min-width: 175px;
+    max-width: 175px;
+    background-color: #333;
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.genre-card:hover {
+    transform: scale(1.05);
+}
+
+.genre-card img {
+    width: 65%;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.genre-card p {
+    font-size: 14px;
+    color: #ddd;
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+    position: absolute; /* Position the buttons absolutely */
+    top: 25%; /* Center them vertically */
+    background: none; /* Remove any background */
+    border: none; /* Remove borders */
+    color: white; /* Arrow color */
+    font-size: 35px; /* Adjust font size */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    z-index: 10; /* Ensure buttons are above other elements */
+}
+
+.scroll-btn.left-btn {
+    left: 0px; /* Position to the left outside genre scroll area */
+}
+
+.scroll-btn.right-btn {
+    right: 0px; /* Position to the right outside genre scroll area */
+}
+
+.scroll-btn:hover {
+    color: #3a2d5c;
+}
+
+
+/* Hero Section */
+.hero {
+    height: 400px;
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('background-image.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+.start-btn {
+    padding: 10px 20px;
+    background-color: #4b3b7a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.start-btn:hover {
+    background-color: #3a2d5c;
+}
+
+/* Games Gallery */
+.games-gallery {
+    background-image: url('popular game/genshinbg.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Makes the background cover the entire section */
+    background-position: center; /* Centers the background image */
+    padding: 40px 20px; /* Adjust padding as needed */
+    color: #fff; /* Text color */
+    padding: 20px;
+    background-color: #333;
+    height: 500px;
+}
+
+.games-gallery h2 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.game-cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr)); /* Responsive layout */
+    gap: 10px; /* Reduced gap between cards */
+    position: relative; /* For positioning blur effect */
+    align-items: center;
+}
+
+.game-card {
+    position: relative;
+    background-color: #444;
+    color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    height: 250px; /* Set fixed height for uniformity */
+    transition: transform 0.3s; /* Removed filter transition from here */
+}
+
+.game-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fills the box */
+    border-radius: 8px;
+}
+
+/* Hover Effect */
+.game-card:hover {
+    transform: scale(1.05); /* Scale up the card on hover */
+}
+
+/* Blur Effect for Other Cards */
+.game-cards:hover .game-card:not(:hover) {
+    filter: blur(2px); /* Blur other cards when one is hovered */
+}
+
+/* Hover Overlay Styling */
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 8px;
+}
+
+.game-card:hover .hover-overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Video Styling */
+.hover-overlay video {
+    width: 80%; /* Adjust video size */
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+/* Check More Button */
+.check-more-btn {
+    padding: 6px 10px;
+    background-color: #4b3b7a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.8em;
+    transition: background-color 0.3s;
+}
+
+.check-more-btn:hover {
+    background-color: #3a2d5c;
+}
+
+.frame-buffer{
+    display: flex;
+    justify-content: space-between;
+}

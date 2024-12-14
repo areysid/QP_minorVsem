@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: url('ex1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    animation: pulse 3s infinite;
+
+    /* Apply hinge animation */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+}
+
+.title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 6rem;
+    /* Increased font size */
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 3px #9147fe, 0 0 6px #9147fe, 0 0 9px #d845d5, 0 0 12px #d845d5;
+    animation: bounceIn 1.5s ease-in-out;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    /* Reduced margin-bottom */
+}
+
+.description {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.75rem;
+    /* Increased font size */
+    color: whitesmoke;
+    margin-bottom: 15px;
+    /* Reduced margin-bottom */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+.button {
+
+    color: #fff;
+    font-size: 25px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover {
+    background-color: #3a2d5c;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border: 2px solid #fff;
+    /* Box around button on hover */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
